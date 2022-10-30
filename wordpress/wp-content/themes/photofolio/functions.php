@@ -68,35 +68,17 @@ add_action('wp_enqueue_scripts', 'load_scripts');
 /**
  * Register Custom Navigation Walker
  */
-// function register_navwalker()
-// {
-//     require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
-// }
-// add_action('after_setup_theme', 'register_navwalker');
+function register_navwalker()
+{
+    require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
+}
+add_action('after_setup_theme', 'register_navwalker');
 
-// register_nav_menus(array(
-//     'primary' => __('Primary Menu'),
-// ));
+register_nav_menus(array(
+    'primary' => __('Primary Menu'),
+));
 
-// register_nav_menus(array(
-//     'secondary' => __('Secondary Menu'),
-// ));
-
-// register_nav_menus(array(
-//     'footer_menu_1' => __('Footer Menu 1'),
-// ));
-
-// register_nav_menus(array(
-//     'footer_menu_2' => __('Footer Menu 2'),
-// ));
-// register_nav_menus(array(
-//     'footer_menu_3' => __('Footer Menu 3'),
-// ));
-// register_nav_menus(array(
-//     'footer_menu_4' => __('Footer Menu 4'),
-// ));
-
-// add_filter('nav_menu_link_attributes', 'prefix_bs5_dropdown_data_attribute', 20, 3);
+add_filter('nav_menu_link_attributes', 'prefix_bs5_dropdown_data_attribute', 20, 3);
 
 /**
  * Use namespaced data attribute for Bootstrap's dropdown toggles.
@@ -106,13 +88,13 @@ add_action('wp_enqueue_scripts', 'load_scripts');
  * @param stdClass $args An object of wp_nav_menu() arguments.
  * @return array
  */
-// function prefix_bs5_dropdown_data_attribute($atts, $item, $args)
-// {
-// 	if (is_a($args->walker, 'WP_Bootstrap_Navwalker')) {
-// 		if (array_key_exists('data-toggle', $atts)) {
-// 			unset($atts['data-toggle']);
-// 			$atts['data-bs-toggle'] = 'dropdown';
-// 		}
-// 	}
-// 	return $atts;
-// }
+function prefix_bs5_dropdown_data_attribute($atts, $item, $args)
+{
+	if (is_a($args->walker, 'WP_Bootstrap_Navwalker')) {
+		if (array_key_exists('data-toggle', $atts)) {
+			unset($atts['data-toggle']);
+			$atts['data-bs-toggle'] = 'dropdown';
+		}
+	}
+	return $atts;
+}

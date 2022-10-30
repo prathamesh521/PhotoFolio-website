@@ -36,7 +36,7 @@
         <h1>PhotoFolio</h1>
       </a>
 
-      <nav id="navbar" class="navbar">
+      <!-- <nav id="navbar" class="navbar">
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="about.html">About</a></li>
@@ -60,7 +60,19 @@
           <li><a href="services.html">Services</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
-      </nav><!-- .navbar -->
+      </nav> -->
+      <?php
+               wp_nav_menu(array(
+                  'theme_location'  => 'primary',
+                  'depth'           => 3, // 1 = no dropdowns, 2 = with dropdowns.
+                  'container'       => 'div',
+                  'container_class' => 'navbar',
+                  'container_id'    => 'navbar',
+                  'menu_class'      => 'navbar-nav',
+                  'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+                  'walker'          => new WP_Bootstrap_Navwalker(),
+               ));
+               ?>
 
       <div class="header-social-links">
         <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
