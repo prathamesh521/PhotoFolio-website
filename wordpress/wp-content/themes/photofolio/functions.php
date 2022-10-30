@@ -32,7 +32,7 @@ function load_stylesheet()
     wp_register_style('glightox', get_stylesheet_directory_uri() . '/assets/vendor/glightbox/css/glightbox.min.css', false, '', 'all');
     wp_register_style('aos', get_stylesheet_directory_uri() . '/assets/vendor/aos/aos.css', false, '', 'all');
 
-    wp_register_style('styles', get_stylesheet_directory_uri() . '/assets/css/style.css', array('google.fonts', 'font-awesome', 'bootstrap', 'bootstrap-icons', 'swiper', 'glightox', 'aos'), '1.0.0', 'all');
+    wp_register_style('styles', get_stylesheet_directory_uri() . '/assets/css/style.css', array('google.fonts', 'font-awesome', 'bootstrap', 'bootstrap-icons', 'swiper', 'glightox', 'aos'), '1.0.2', 'all');
     wp_enqueue_style('styles');
 }
 add_action('wp_enqueue_scripts', 'load_stylesheet',  50);

@@ -66,9 +66,9 @@
                   'theme_location'  => 'primary',
                   'depth'           => 3, // 1 = no dropdowns, 2 = with dropdowns.
                   'container'       => 'div',
-                  'container_class' => 'navbar',
-                  'container_id'    => 'navbar',
-                  'menu_class'      => 'navbar-nav',
+                  'container_class' => '',
+                  'container_id'    => '',
+                  'menu_class'      => 'navbar',
                   'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
                   'walker'          => new WP_Bootstrap_Navwalker(),
                ));
